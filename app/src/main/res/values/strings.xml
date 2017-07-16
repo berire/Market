@@ -38,5 +38,8 @@
     <string name="fetch">Fetch</string>
     <string name="pause">Pause Location Updates</string>
     <string name="resume">Resume Location Updates</string>
+    <string name="facebook_app_id">2099204850306660</string>
+    <string name="fb_login_protocol_scheme">fb2099204850306660</string>
+    <string name="signed_in_fmt">Signed in as: %s</string>
 </resources>
 

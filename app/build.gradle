@@ -17,6 +17,10 @@ android {
                                 onesignal_google_project_number: "REMOTE"]
 
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -60,6 +64,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:10.2.0'
     // play-services-analytics is only needed when using 8.1.0 or older.
     // compile 'com.google.android.gms:play-services-analytics:+'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.android.support:multidex:1.0.1'
 }
 apply plugin: 'com.google.gms.google-services'
 
