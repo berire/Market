@@ -38,7 +38,7 @@
         android:layout_marginRight="27dp"
         android:layout_marginEnd="27dp" />
 
-    <!-- Link to Login Screen -->
+    <!-- Link toLogin Screen -->
 
     <Button
         android:id="@+id/btn_login"
