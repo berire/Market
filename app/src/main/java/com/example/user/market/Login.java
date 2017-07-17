@@ -1,5 +1,5 @@
 package com.example.user.market;
-// saat 13.14
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -74,8 +74,8 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
         setContentView(R.layout.activity_login);
         //Realm.init(this); //initialize other plugins
         //Google Login
-        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        SignInButton googleSignInButton = (SignInButton) findViewById(R.id.login_google_sign_in_button);
+        googleSignInButton.setSize(SignInButton.SIZE_STANDARD);
 
         // [START configure_signin]
         // Configure sign-in to request the user's ID, email address, and basic
@@ -94,7 +94,7 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
         // [END build_client]
-        signInButton.setOnClickListener(this);
+        googleSignInButton.setOnClickListener(this);
 
 
 
@@ -103,7 +103,7 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
 
 
         callbackManager = CallbackManager.Factory.create();
-        facebutton = (LoginButton)findViewById(R.id.facelogin_button);
+        facebutton = (LoginButton)findViewById(R.id.login_facebook_sign_in_button);
         facebutton.setReadPermissions("email", "public_profile");
 
         facebutton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -129,7 +129,7 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-           startActivity(new Intent(Login.this, Menu.class));
+            startActivity(new Intent(Login.this, Menu.class));
             finish();
         }
 
@@ -137,12 +137,12 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnSignup = (Button) findViewById(R.id.btn_signup);
-        btnLogin = (Button) findViewById(R.id.btn_login);
-        btnReset = (Button) findViewById(R.id.btn_reset_password);
+        inputEmail = (EditText) findViewById(R.id.login_email_editText);
+        inputPassword = (EditText) findViewById(R.id.login_email_editText);
+        progressBar = (ProgressBar) findViewById(R.id.login_progressBar);
+        btnSignup = (Button) findViewById(R.id.login_sign_up_button);
+        btnLogin = (Button) findViewById(R.id.login_default_sign_in_button);
+        btnReset = (Button) findViewById(R.id.login_reset_password_button);
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -212,11 +212,11 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.sign_in_button:
+            case R.id.login_google_sign_in_button:
                 signIn();
                 break;
 
-    }}
+        }}
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {

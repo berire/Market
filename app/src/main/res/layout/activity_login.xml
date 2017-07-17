@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- loginnnnnn -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/relativelayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -17,31 +18,31 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!-- Google Sign In Button -->
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+        android:id="@+id/login_google_sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        android:layout_above="@+id/btn_signup"
-        android:layout_toRightOf="@+id/btn_login"
-        android:layout_toEndOf="@+id/btn_login" />
+        android:layout_above="@+id/login_sign_up_button"
+        android:layout_toRightOf="@+id/login_default_sign_in_button"
+        android:layout_toEndOf="@+id/login_default_sign_in_button" />
 
-    <!-- Login Button -->
+    <!-- Facebook Sign In Button -->
     <com.facebook.login.widget.LoginButton
-        android:id="@+id/facelogin_button"
+        android:id="@+id/login_facebook_sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/btn_signup"
-        android:layout_alignRight="@+id/btn_login"
-        android:layout_alignEnd="@+id/btn_login"
+        android:layout_above="@+id/login_sign_up_button"
+        android:layout_alignRight="@+id/login_default_sign_in_button"
+        android:layout_alignEnd="@+id/login_default_sign_in_button"
         android:layout_marginRight="27dp"
         android:layout_marginEnd="27dp" />
 
-    <!-- Link to Login Screen -->
-
+    <!-- Login Button -->
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/login_default_sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -50,53 +51,52 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <!-- EditText ToType The Email-->
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/login_email_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:layout_above="@+id/password"
-        android:layout_toRightOf="@+id/progressBar"
-        android:layout_toEndOf="@+id/progressBar" />
+        android:layout_above="@+id/login_password_editText"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- ProgressBar -->
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/login_progressBar"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="20dp"
         android:visibility="gone" />
 
+    <!-- EditText To Type The Password-->
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/login_password_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:layout_above="@+id/btn_login"
-        android:layout_alignLeft="@+id/email"
-        android:layout_alignStart="@+id/email" />
+        android:layout_above="@+id/login_default_sign_in_button"
+        android:layout_alignLeft="@+id/login_email_editText"
+        android:layout_alignStart="@+id/login_email_editText" />
 
     <Button
-        android:id="@+id/btn_signup"
+        android:id="@+id/login_sign_up_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@null"
         android:text="Register via Mail"
         android:textAllCaps="false"
         android:textSize="15dp"
-        android:layout_alignBottom="@+id/btn_reset_password"
+        android:layout_alignBottom="@+id/login_reset_password_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="48dp" />
 
 
     <Button
-        android:id="@+id/btn_reset_password"
+        android:id="@+id/login_reset_password_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@null"
